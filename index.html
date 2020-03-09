@@ -1,0 +1,68 @@
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<title>KALKULATOR</title>
+<style>
+body{
+background-image:url('math.jpeg');
+}
+#kontejner{
+width:80%;
+height:30%;
+background-color:grey;
+margin:auto;
+}
+form{
+text-align:center;
+padding-top:20px;
+}
+</style>
+</head>
+<body>
+<div id="kontejner">
+<form>
+<input type="number" id="prvi">
+<input type="text" id="operator">
+<input type="number" id="drugi">
+=
+<input type="number" id="rezultat">
+<input type="submit" id="potvrda" value="izračunaj">
+</form>
+</div>
+
+<script>
+document.getElementById("potvrda").addEventListener("click", myFunction);
+function myFunction(){
+var x=document.getElementById("prvi").value;
+var y=document.getElementById("drugi").value;
+var operator=document.getElementById("operator").value;
+var rezultat
+var x= parseInt(x,10);
+var y= parseInt(y,10);
+
+if(operator==='-'){
+rezultat= x-y
+}
+
+else if (operator==='+'){
+rezultat= x+y
+}
+
+else if (operator==='*'){
+rezultat= x*y
+}
+
+else if (operator==='/'){
+if(y===0){
+alert('nije dozvoljeno dijeljenje sa nulom')}
+else{
+rezultat= x/y
+}
+}
+else{
+alert('pogresan operator')
+}
+document.getElementById('rezultat').value=rezultat;
+}
+</script>
+</html>
